@@ -17,8 +17,10 @@ services:
       postgres_pass: let-me-in
       postgres_db: graph-node
       ipfs: 'ipfs:5001'
-      ethereum: 'mainnet:http://host.docker.internal:8545'
+      ethereum: 'fuse:https://explorer-node.fuse.io'
       RUST_LOG: info
+      # Disable fetching blocks by block number
+      GRAPH_ETH_CALL_BY_NUMBER: 'false'
   ipfs:
     image: ipfs/go-ipfs:v0.4.23
     ports:
